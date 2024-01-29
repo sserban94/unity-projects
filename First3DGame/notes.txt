@@ -1,0 +1,29 @@
+Rigidbody - applies gravity to object
+Collider - by using this Unity knows the objects can't go through each other
+
+Rigidbody constraints - can freeze rotation and movement
+
+Edit Tab -> Project Settings -> Input Manager - in order to avoid hardcoding keys
+
+I can drag and drop the camera on the player - no need for code
+
+
+Align two components + make vertices touch -> press V from vertices 
+
+
+For the bug where the player could stop falling by sticking to the lateral side of the floor - add physics material with 0 friction to the prefab floor and to the player as well
+
+
+In order to move the player with the moving floor - need to make the player - child of the moving floor - but just when it stands on it
+
+stop objects pushing other objects - "Kinematic" check in rigidbody
+
+
+3 steps to make an object "die":
+	- disable its mesh renderer (to make it invisible)
+	- enable kinematic from rigidbody (stop physics)
+	- disable movement script
+	
+Component - Collider - is Trigger -> the collide event is still sent, but the object is now passthrough
+
+In order to scale text in the UI -> Canvas (which contains the text) -> UI Scale Mode - Scale with Screen Size
