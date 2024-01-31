@@ -7,10 +7,13 @@ public class PlayerHealth : MonoBehaviour
 {
     float yDeathPoint = -2;
     bool isDead = false;
+    [SerializeField] AudioSource deadByCollisionSound;
+    [SerializeField] AudioSource deadByFallingSound;
     private void Update()
     {
         if (transform.position.y < this.yDeathPoint && !this.isDead)
         {
+            deadByFallingSound.Play();
             Die();
         }
     }
@@ -23,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<PlayerMovementClean>().enabled = false;
+            deadByCollisionSound.Play();
             Die();
         }
     }

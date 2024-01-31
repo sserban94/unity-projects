@@ -26,4 +26,12 @@ stop objects pushing other objects - "Kinematic" check in rigidbody
 	
 Component - Collider - is Trigger -> the collide event is still sent, but the object is now passthrough
 
-In order to scale text in the UI -> Canvas (which contains the text) -> UI Scale Mode - Scale with Screen Size
+In order to scale text in the UI -> Canvas (which contains the text) -> UI Scale Mode - Scale with Screen Size (also change width and height match below)
+
+In order to modify the text value with a script - drag the text to the script component with the text field declared
+
+Normal Text dead. Text Mesh PRO - in order to use a normal text font I have to select the Window tab, Text Mesh PRO - Font Asset Creator
+EventSystem is created 
+
+
+Asset Store in Windows - for getting media assets

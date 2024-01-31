@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Collector : MonoBehaviour
 {
     int collectibleCount = 0;
+    [SerializeField] AudioSource collectSound;
 
     [SerializeField] TextMeshProUGUI collectibleCountText;
 
@@ -19,6 +20,7 @@ public class Collector : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
+            collectSound.Play();
             this.collectibleCount++;
             Debug.Log(this.collectibleCount);
             this.collectibleCountText.text = "Collected: " + this.collectibleCount;

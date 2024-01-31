@@ -8,6 +8,7 @@ public class PlayerMovementClean : MonoBehaviour
     // by adding SerializeField I expose these fields to Unity - now they show in the script component in the UI
     [SerializeField] float stepDistance = 5f;
     [SerializeField] float jumpDistance = 5f;
+    [SerializeField] AudioSource jumpSound;
     float touchingGroundDistanceValue = .1f;
 
 
@@ -47,6 +48,7 @@ public class PlayerMovementClean : MonoBehaviour
     private void Jump()
     {
         this.rigidBody.velocity = new Vector3(this.rigidBody.velocity.x, this.jumpDistance, this.rigidBody.velocity.z);
+        jumpSound.Play();
     }
 
     bool isTouchingGround()
